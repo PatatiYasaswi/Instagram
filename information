@@ -1,3 +1,29 @@
-patati yasaswi
-studying in mlritm
-in data science
+class Post:
+    def __init__(self, username, caption):
+        self.username = username
+        self.caption = caption
+        self.likes = 0
+        self.liked_users = set()
+
+    def like_post(self, user):
+        if user not in self.liked_users:
+            self.likes += 1
+            self.liked_users.add(user)
+            print(f"{user} liked the post!")
+        else:
+            print(f"{user} already liked this post.")
+
+    def show_post(self):
+        print(f"{self.username}'s post: {self.caption}")
+        print(f"❤️ Likes: {self.likes}")
+
+
+# Example usage
+if __name__ == "__main__":
+    post = Post("alex", "Enjoying the sunset 🌅")
+
+    post.show_post()
+    post.like_post("jordan")
+    post.like_post("taylor")
+    post.like_post("jordan")  # duplicate like
+    post.show_post()
