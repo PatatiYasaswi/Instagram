@@ -12,9 +12,7 @@ class Post:
             print(f"{user} liked the post!")
         else:
             print(f"{user} already liked this post.")
-
-
-     if user not in self.liked_users:
+if user not in self.liked_users:
             self.likes += 1
             self.liked_users.add(user)
             print(f"{user} liked the post!")
