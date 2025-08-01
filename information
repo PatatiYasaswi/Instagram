@@ -13,6 +13,14 @@ class Post:
         else:
             print(f"{user} already liked this post.")
 
+
+     if user not in self.liked_users:
+            self.likes += 1
+            self.liked_users.add(user)
+            print(f"{user} liked the post!")
+        else:
+            print(f"{user} already liked this post.")
+
     def show_post(self):
         print(f"{self.username}'s post: {self.caption}")
         print(f"❤️ Likes: {self.likes}")
